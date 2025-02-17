@@ -1,18 +1,14 @@
 <template>
   <div>
     <h1>Task 1</h1>
-    <button @click="show">Show</button>
-    <p v-if="visible">text</p>
+    <button @click="toggle1">Toggle 1</button>
+    <p v-if="visible1">text 1</p>
 
-    <h1>Task 2</h1>
-    <button @click="show">Show</button>
-    <button @click="hide">Hide</button>
-    <p v-if="visible">text</p>
+    <button @click="toggle2">Toggle 2</button>
+    <p v-if="visible2">text 2</p>
 
-    <h1>Task 3</h1>
-    <button v-if="!visible" @click="show">Show</button>
-    <button v-if="visible" @click="hide">Hide</button>
-    <p v-if="visible">text</p>
+    <button @click="toggle3">Toggle 3</button>
+    <p v-if="visible3">text 3</p>
   </div>
 </template>
 
@@ -20,15 +16,20 @@
 export default {
   data() {
     return {
-      visible: false,
+      visible1: false,
+      visible2: false,
+      visible3: false,
     };
   },
   methods: {
-    show() {
-      this.visible = true;
+    toggle1() {
+      this.visible1 = !this.visible1;
     },
-    hide() {
-      this.visible = false;
+    toggle2() {
+      this.visible2 = !this.visible2;
+    },
+    toggle3() {
+      this.visible3 = !this.visible3;
     },
   },
 };
