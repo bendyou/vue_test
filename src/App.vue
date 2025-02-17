@@ -1,8 +1,7 @@
 <template>
   <div>
     <h1>Task 1</h1>
-    <p v-if="visible">First Paragraph</p>
-    <p v-if="!visible">Second Paragraph</p>
+    <p v-if="!hidden">text</p>
   </div>
 </template>
 
@@ -10,7 +9,7 @@
 export default {
   data() {
     return {
-      visible: true,
+      hidden: true,
     };
   },
 };
