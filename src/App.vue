@@ -1,32 +1,23 @@
 <template>
   <div>
     <h1>Task 1</h1>
-    <p>Price: {{ price }}</p>
+    <a href="https://example.com" @click.prevent="handleClick">Click me</a>
 
     <h1>Task 2</h1>
-    <button @click="changeCost">Change Cost</button>
-    <p>Updated Price: {{ price }}</p>
+    <button @click.once="handleClickOnce">Click me once</button>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      cost: 10,
-      amount: 5,
-    };
-  },
-  computed: {
-    price() {
-      return this.cost * this.amount;
-    },
-  },
   methods: {
-    changeCost() {
-      this.cost = 20;
+    handleClick() {
+      alert('Link clicked!');
     },
-  },
+    handleClickOnce() {
+      alert('Button clicked once!');
+    }
+  }
 };
 </script>
 
