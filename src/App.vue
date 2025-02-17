@@ -1,10 +1,6 @@
 <template>
-  <button @click="hide">Hide</button>
-  <template v-if="isVisible">
-    <p>Text 1</p>
-    <p>Text 2</p>
-    <p>Text 3</p>
-  </template>
+  <button @click="toggle">Toggle</button>
+  <p v-show="isVisible">Text</p>
 </template>
 
 <script>
@@ -15,8 +11,8 @@ export default {
     };
   },
   methods: {
-    hide() {
-      this.isVisible = false;
+    toggle() {
+      this.isVisible = !this.isVisible;
     },
   },
 };
