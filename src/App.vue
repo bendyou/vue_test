@@ -1,25 +1,32 @@
 <template>
   <div>
-    <!-- Task 1 -->
     <h1>Task 1</h1>
-    <button @click="showSquare(2)">Show Square of 2</button>
-    <button @click="showSquare(3)">Show Square of 3</button>
+    <p>{{ text }}</p>
 
-    <!-- Task 2 -->
     <h1>Task 2</h1>
-    <button @click="showSquare(2)">Square of 2</button>
-    <button @click="showSquare(3)">Square of 3</button>
+    <button @click="changeText1">Change Text 1</button>
+
+    <h1>Task 3</h1>
+    <button @click="changeText1">Change Text 1</button>
+    <button @click="changeText2">Change Text 2</button>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      text: 'Initial Text',
+    };
+  },
   methods: {
-    // Task 1: Метод, который выводит квадрат числа
-    showSquare(number) {
-      alert(number * number);
-    }
-  }
+    changeText1() {
+      this.text = 'Text 1';
+    },
+    changeText2() {
+      this.text = 'Text 2';
+    },
+  },
 };
 </script>
 
