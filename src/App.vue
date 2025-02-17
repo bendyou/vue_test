@@ -1,22 +1,25 @@
 <template>
-  <p :class="cssClasses">text</p>
+  <p :class="obj">text</p>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      cssClasses: 'active valid'
+      obj: {
+        done: true,
+        selected: false
+      }
     };
   }
 }
 </script>
 
 <style scoped>
-.active {
-  color: red;
+.done {
+  color: green;
 }
-.valid {
-  font-weight: bold;
+.selected {
+  background-color: yellow;
 }
 </style>
