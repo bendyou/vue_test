@@ -1,14 +1,11 @@
 <template>
   <div>
     <h1>Task 1</h1>
-    <p>{{ text }}</p>
+    <p>Price: {{ price }}</p>
 
     <h1>Task 2</h1>
-    <button @click="changeText1">Change Text 1</button>
-
-    <h1>Task 3</h1>
-    <button @click="changeText1">Change Text 1</button>
-    <button @click="changeText2">Change Text 2</button>
+    <button @click="changeCost">Change Cost</button>
+    <p>Updated Price: {{ price }}</p>
   </div>
 </template>
 
@@ -16,15 +13,18 @@
 export default {
   data() {
     return {
-      text: 'Initial Text',
+      cost: 10,
+      amount: 5,
     };
   },
-  methods: {
-    changeText1() {
-      this.text = 'Text 1';
+  computed: {
+    price() {
+      return this.cost * this.amount;
     },
-    changeText2() {
-      this.text = 'Text 2';
+  },
+  methods: {
+    changeCost() {
+      this.cost = 20;
     },
   },
 };
