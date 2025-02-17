@@ -1,5 +1,10 @@
 <template>
-  <p :class="obj">text</p>
+  <div>
+    <p :class="obj">This is some text</p>
+    <button @click="showElement">Show</button>
+    <button @click="hideElement">Hide</button>
+    <button @click="toggleElement">Toggle</button>
+  </div>
 </template>
 
 <script>
@@ -7,19 +12,26 @@ export default {
   data() {
     return {
       obj: {
-        done: true,
-        selected: false
+        hidden: true
       }
     };
+  },
+  methods: {
+    showElement() {
+      this.obj.hidden = false;
+    },
+    hideElement() {
+      this.obj.hidden = true;
+    },
+    toggleElement() {
+      this.obj.hidden = !this.obj.hidden;
+    }
   }
 }
 </script>
 
 <style scoped>
-.done {
-  color: green;
-}
-.selected {
-  background-color: yellow;
+.hidden {
+  display: none;
 }
 </style>
