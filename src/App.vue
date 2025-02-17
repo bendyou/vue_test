@@ -1,20 +1,22 @@
 <template>
-  <div>
-    <p>1</p>
-    <p>2</p>
-  </div>
+  <p :class="cssClasses">text</p>
 </template>
 
 <script>
 export default {
   data() {
-    return {}
+    return {
+      cssClasses: 'active valid'
+    };
   }
 }
 </script>
 
 <style scoped>
-p {
+.active {
   color: red;
+}
+.valid {
+  font-weight: bold;
 }
 </style>
