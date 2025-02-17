@@ -1,14 +1,8 @@
 <template>
   <div>
     <h1>Task 1</h1>
-    <div v-for="item in items" :key="item">{{ item }}</div>
-    
-    <h1>Task 2</h1>
-    <div v-for="item in items" :key="item">{{ item * item }}</div>
-
-    <h1>Task 3</h1>
     <ul>
-      <li v-for="item in items" :key="item">{{ item }}</li>
+      <li v-for="(elem, key) in arr" :key="key">{{ key + 1 }}</li>
     </ul>
   </div>
 </template>
@@ -17,7 +11,7 @@
 export default {
   data() {
     return {
-      items: [1, 2, 3, 4, 5]
+      arr: ['x', 'y', 'z']
     };
   }
 };
