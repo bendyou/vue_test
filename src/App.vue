@@ -1,20 +1,23 @@
 <template>
-  <p :class="{ active: true, valid: false }">text</p>
+  <p :class="{ valid: isValid, disabled: isDisabled }">text</p>
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      isValid: true,
+      isDisabled: true
+    };
   }
 }
 </script>
 
 <style scoped>
-.active {
+.valid {
   color: green;
 }
-.valid {
-  font-weight: bold;
+.disabled {
+  color: gray;
 }
 </style>
