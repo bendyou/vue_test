@@ -2,39 +2,22 @@
   <div>
     <!-- Task 1 -->
     <h1>Task 1</h1>
-    <button @click="showDay">Show Day from Number</button>
+    <button @click="showSquare(2)">Show Square of 2</button>
+    <button @click="showSquare(3)">Show Square of 3</button>
 
     <!-- Task 2 -->
     <h1>Task 2</h1>
-    <button @click="showCurrentDay">Show Current Day</button>
+    <button @click="showSquare(2)">Square of 2</button>
+    <button @click="showSquare(3)">Square of 3</button>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {};
-  },
   methods: {
-    // ¬спомогательный метод, который возвращает день недели по числу
-    getDayFromNumber(number) {
-      const days = [
-        'Sunday', 'Monday', 'Tuesday', 'Wednesday', 
-        'Thursday', 'Friday', 'Saturday'
-      ];
-      return days[number];
-    },
-
-    // Task 1: ћетод, который выводит день недели по числу
-    showDay() {
-      let dayNumber = 3; // Ќапример, 3 - это среда (Wednesday)
-      alert(this.getDayFromNumber(dayNumber));
-    },
-
-    // Task 2: ќсновной метод, который выводит текущий день недели
-    showCurrentDay() {
-      const currentDay = new Date().getDay(); // ѕолучаем число текущего дн€ недели
-      alert(this.getDayFromNumber(currentDay)); // ¬ыводим название дн€
+    // Task 1: ћетод, который выводит квадрат числа
+    showSquare(number) {
+      alert(number * number);
     }
   }
 };
