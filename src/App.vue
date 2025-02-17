@@ -2,20 +2,15 @@
   <div>
     <!-- Task 1 -->
     <h1>Task 1</h1>
-    <p>{{ sum }}</p>
+    <button @click="showDate">Show Date</button>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      obj: {x: 1, y: 2, z: 3},
-    };
-  },
-  computed: {
-    sum() {
-      return Object.values(this.obj).reduce((acc, curr) => acc + curr, 0);
+  methods: {
+    showDate() {
+      alert(new Date());
     }
   }
 };
@@ -26,7 +21,9 @@ h1 {
   font-size: 24px;
   margin-bottom: 10px;
 }
-p {
+button {
   font-size: 18px;
+  padding: 10px;
+  margin-top: 10px;
 }
 </style>
