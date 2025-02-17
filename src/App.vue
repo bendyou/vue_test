@@ -2,12 +2,6 @@
   <div>
     <!-- Task 1 -->
     <h1>Task 1</h1>
-    <p>{{ arr2[0] }}</p>
-    <p>{{ arr2[1] }}</p>
-    <p>{{ arr2[2] }}</p>
-
-    <!-- Task 2 -->
-    <h1>Task 2</h1>
     <p>{{ sum }}</p>
   </div>
 </template>
@@ -16,13 +10,12 @@
 export default {
   data() {
     return {
-      arr2: ['x', 'y', 'z'],
-      arr: [1, 2, 3]
+      obj: {x: 1, y: 2, z: 3},
     };
   },
   computed: {
     sum() {
-      return this.arr.reduce((acc, curr) => acc + curr, 0);
+      return Object.values(this.obj).reduce((acc, curr) => acc + curr, 0);
     }
   }
 };
