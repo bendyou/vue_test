@@ -1,8 +1,22 @@
 {
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "exclude": ["node_modules", "dist"]
-}
+    "compilerOptions": {
+      "baseUrl": "./",
+      "paths": {
+        "@/*": ["src/*"],
+        "assets/*": ["src/assets/*"],
+        "components/*": ["src/components/*"],
+        "views/*": ["src/views/*"]
+      },
+      "moduleResolution": "node",
+      "allowJs": true,
+      "checkJs": false,
+      "jsx": "preserve"
+    },
+    "include": [
+      "src/**/*.js",
+      "src/**/*.vue",
+      "src/**/*.ts",
+      "src/**/*.d.ts"
+    ]
+  }
+  
