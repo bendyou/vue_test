@@ -1,8 +1,12 @@
 <template>
   <div>
-    <h1>Task 1</h1>
-    <p v-if="isAdmin">You have admin privileges</p>
-    <p v-else>You do not have admin privileges</p>
+    <p v-if="day === 'Monday'">Monday</p>
+    <p v-if="day === 'Tuesday'">Tuesday</p>
+    <p v-if="day === 'Wednesday'">Wednesday</p>
+    <p v-if="day === 'Thursday'">Thursday</p>
+    <p v-if="day === 'Friday'">Friday</p>
+    <p v-if="day === 'Saturday'">Saturday</p>
+    <p v-if="day === 'Sunday'">Sunday</p>
   </div>
 </template>
 
@@ -10,17 +14,13 @@
 export default {
   data() {
     return {
-      isAdmin: true,
+      day: 'Wednesday',
     };
   },
 };
 </script>
 
 <style scoped>
-h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
 p {
   font-size: 18px;
   margin-top: 10px;
