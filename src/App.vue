@@ -2,19 +2,21 @@
   <div>
     <!-- Task 1 -->
     <h1>Task 1</h1>
-    <button @click="showDate">Show Date</button>
-
-    <!-- Task 2 -->
-    <h1>Task 2</h1>
-    <button @mouseenter="showDate">Hover over me</button>
+    <button @click="showSum">Show Sum</button>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      num1: 1,
+      num2: 2
+    };
+  },
   methods: {
-    showDate() {
-      alert(new Date());
+    showSum() {
+      alert(this.num1 + this.num2);
     }
   }
 };
