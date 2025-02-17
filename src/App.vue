@@ -1,21 +1,26 @@
 <template>
   <div>
     <h1>Task 1</h1>
-    <p :style="{ color: 'green', backgroundColor: 'yellow' }">
-      text
-    </p>
+    <input v-model="message">
+    <p>{{ message }}</p>
 
     <h1>Task 2</h1>
-    <p :style="{ fontWeight: 'bold', fontStyle: 'italic' }">
-      text
-    </p>
+    <input v-model="message">
+    <p>{{ message.toUpperCase() }}</p>
+
+    <h1>Task 3</h1>
+    <input v-model.number="number" type="number">
+    <p>{{ number * number }}</p>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      message: '',
+      number: 0
+    };
   }
 }
 </script>
