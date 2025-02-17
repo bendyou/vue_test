@@ -1,14 +1,20 @@
 <template>
   <div>
     <h1>Task 1</h1>
-    <button @click="toggle1">Toggle 1</button>
-    <p v-if="visible1">text 1</p>
+    <button @click="toggle1">
+      {{ visible1 ? 'Hide 1' : 'Show 1' }}
+    </button>
+    <p v-if="visible1">Text 1</p>
 
-    <button @click="toggle2">Toggle 2</button>
-    <p v-if="visible2">text 2</p>
+    <button @click="toggle2">
+      {{ visible2 ? 'Hide 2' : 'Show 2' }}
+    </button>
+    <p v-if="visible2">Text 2</p>
 
-    <button @click="toggle3">Toggle 3</button>
-    <p v-if="visible3">text 3</p>
+    <button @click="toggle3">
+      {{ visible3 ? 'Hide 3' : 'Show 3' }}
+    </button>
+    <p v-if="visible3">Text 3</p>
   </div>
 </template>
 
