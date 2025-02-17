@@ -1,7 +1,18 @@
 <template>
   <div>
     <h1>Task 1</h1>
-    <p v-if="!hidden">text</p>
+    <button @click="show">Show</button>
+    <p v-if="visible">text</p>
+
+    <h1>Task 2</h1>
+    <button @click="show">Show</button>
+    <button @click="hide">Hide</button>
+    <p v-if="visible">text</p>
+
+    <h1>Task 3</h1>
+    <button v-if="!visible" @click="show">Show</button>
+    <button v-if="visible" @click="hide">Hide</button>
+    <p v-if="visible">text</p>
   </div>
 </template>
 
@@ -9,8 +20,16 @@
 export default {
   data() {
     return {
-      hidden: true,
+      visible: false,
     };
+  },
+  methods: {
+    show() {
+      this.visible = true;
+    },
+    hide() {
+      this.visible = false;
+    },
   },
 };
 </script>
@@ -19,6 +38,11 @@ export default {
 h1 {
   font-size: 24px;
   margin-bottom: 10px;
+}
+button {
+  font-size: 18px;
+  padding: 10px;
+  margin-top: 10px;
 }
 p {
   font-size: 18px;
