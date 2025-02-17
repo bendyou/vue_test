@@ -2,9 +2,7 @@
   <div>
     <h1>Task 1</h1>
     <ul>
-      <template v-for="elem in items" :key="elem">
-        <li v-if="elem > 0">{{ elem }}</li>
-      </template>
+      <li v-for="product in products" :key="product.id">{{ product.name }}</li>
     </ul>
   </div>
 </template>
@@ -13,7 +11,11 @@
 export default {
   data() {
     return {
-      items: [1, -2, 3, -4, 5]
+      products: [
+        { id: 1, name: 'product1' },
+        { id: 2, name: 'product2' },
+        { id: 3, name: 'product3' }
+      ]
     };
   }
 };
